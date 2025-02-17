@@ -20,11 +20,16 @@ async function main() {
 main()
     .then(() => console.log("Database connected"))
     .catch((err) => console.log(err));
+    
 
 
 app.get("/", (req, res) => {
     res.render("./listings/Home.ejs");
 });
+
+app.get("/Home", (req,res)=>{
+    res.send("Welcome To Home");
+})
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
